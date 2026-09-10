@@ -1,2 +1,2 @@
 # CCTV-security
-diseño adaptable, interfaz intuitiva, catálogo de productos, almacenamiento y gestión de videos, integración en la nube, configuración de alertas de seguridad, panel de monitoreo en tiempo real, análisis de usuarios, sección de testimonios de clientes, soporte por chat en vivo, formulario de contacto, sección de blog o noticias.
+Desing and build a security services website. It includes +9 pre-designed HTML5 template files for Home, About, Service, Pricing Plan, Blog Grid, Blog Detail, Team Member, Testimonial, Contact, and more. All the template files are fully responsive to give a perfect user experience on all devices. 
