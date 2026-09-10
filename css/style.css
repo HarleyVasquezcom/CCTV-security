@@ -1,0 +1,627 @@
+/* -------------------------------------------------------------
+ * VIGILANCE DEFENSE - SECURITY & CCTV SERVICES
+ * Visual Strategy: Dark, High Contrast B&W, Tactical Metallic & Neon Orange
+ * ------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700;900&display=swap');
+
+:root {
+    --color-bg-pure: #050505;
+    --color-bg-dark: #0a0a0a;
+    --color-bg-card: #121212;
+    --color-bg-card-hover: #1a1a1a;
+    --color-gray-dark: #222222;
+    --color-gray-border: #333333;
+    --color-text-main: #f0f0f0;
+    --color-text-muted: #a0a0a0;
+
+    --color-neon-orange: #ff5500;
+    --color-neon-orange-hover: #ff7722;
+    --color-neon-glow: rgba(255, 85, 0, 0.35);
+
+    --silver-gradient: linear-gradient(135deg, #ffffff 0%, #b0b5bc 40%, #7d8590 70%, #d8dce0 100%);
+    --silver-border: linear-gradient(90deg, #ff5500 0%, #7d8590 50%, #ff5500 100%);
+    --dark-texture: radial-gradient(circle, rgba(20,20,20,1) 0%, rgba(5,5,5,1) 100%),
+                    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 8px);
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Global Reset & Base Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--dark-texture);
+    background-attachment: fixed;
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 3.2rem; font-weight: 900; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.35rem; }
+h5 { font-size: 1.1rem; }
+
+a {
+    color: var(--color-neon-orange);
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-neon-orange-hover);
+}
+
+/* High Contrast B&W Image Styling */
+.bw-img {
+    filter: grayscale(100%) contrast(140%) brightness(95%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    object-fit: cover;
+}
+
+.bw-img:hover, .card:hover .bw-img {
+    filter: grayscale(80%) contrast(150%) brightness(105%);
+    transform: scale(1.03);
+}
+
+.img-container {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-gray-border);
+}
+
+.img-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+
+/* Custom Tactical Buttons */
+.btn-neon {
+    background-color: var(--color-neon-orange);
+    color: #000000;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    border: 2px solid var(--color-neon-orange);
+    border-radius: 0px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-neon:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 20px var(--color-neon-glow);
+    transform: translateY(-2px);
+}
+
+.btn-silver {
+    background: var(--silver-gradient);
+    color: #050505;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    border: none;
+    border-radius: 0px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-silver:hover {
+    background: #ffffff;
+    color: var(--color-neon-orange);
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.btn-outline-neon {
+    background: transparent;
+    color: var(--color-neon-orange);
+    border: 2px solid var(--color-neon-orange);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-neon:hover {
+    background: var(--color-neon-orange);
+    color: #000000;
+}
+
+/* Header & Top Bar */
+.top-bar {
+    background: #000000;
+    border-bottom: 1px solid var(--color-gray-border);
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+}
+
+.top-bar i {
+    color: var(--color-neon-orange);
+    margin-right: 0.4rem;
+}
+
+.navbar-tactical {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--color-neon-orange);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #ffffff !important;
+}
+
+.navbar-brand span {
+    color: var(--color-neon-orange);
+}
+
+.navbar-tactical .nav-link {
+    color: #dddddd !important;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem !important;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.navbar-tactical .nav-link:hover,
+.navbar-tactical .nav-link.active {
+    color: var(--color-neon-orange) !important;
+    border-bottom: 2px solid var(--color-neon-orange);
+}
+
+.dropdown-menu-dark {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    border-top: 3px solid var(--color-neon-orange);
+    border-radius: 0;
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #cccccc;
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+    padding: 0.6rem 1.2rem;
+}
+
+.dropdown-menu-dark .dropdown-item:hover,
+.dropdown-menu-dark .dropdown-item.active {
+    background-color: var(--color-gray-dark);
+    color: var(--color-neon-orange);
+}
+
+.lang-selector {
+    background: var(--color-bg-card);
+    color: #ffffff;
+    border: 1px solid var(--color-neon-orange);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+}
+
+/* Page Header Banner */
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--color-gray-border);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--color-neon-orange);
+}
+
+/* Hero Carousel */
+.hero-carousel .carousel-item {
+    height: 85vh;
+    min-height: 550px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-carousel .carousel-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.85) 100%);
+}
+
+.hero-caption {
+    position: relative;
+    z-index: 2;
+    top: 25%;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--color-neon-orange);
+    color: #000000;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+/* Section Containers & Cards */
+.section-padding {
+    padding: 4.5rem 0;
+}
+
+.section-title {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+}
+
+.section-title .subtitle {
+    color: var(--color-neon-orange);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.card-tactical {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    border-radius: 0;
+    padding: 1.8rem;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card-tactical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0%;
+    background: var(--color-neon-orange);
+    transition: height 0.3s ease;
+}
+
+.card-tactical:hover {
+    background: var(--color-bg-card-hover);
+    border-color: #444444;
+    transform: translateY(-4px);
+}
+
+.card-tactical:hover::before {
+    height: 100%;
+}
+
+.icon-box-tactical {
+    width: 60px;
+    height: 60px;
+    background: #000000;
+    border: 1px solid var(--color-neon-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--color-neon-orange);
+    margin-bottom: 1.2rem;
+}
+
+/* Feature Badge High Info Density */
+.feature-list-tight {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list-tight li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-border);
+    display: flex;
+    align-items: center;
+    font-size: 0.92rem;
+}
+
+.feature-list-tight li i {
+    color: var(--color-neon-orange);
+    margin-right: 0.75rem;
+}
+
+/* Pricing Card */
+.pricing-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--color-neon-orange);
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.2);
+}
+
+.pricing-card .price {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    margin: 1.5rem 0;
+}
+
+.pricing-card .price span {
+    font-size: 1.2rem;
+    color: var(--color-neon-orange);
+}
+
+/* Team Member Cards */
+.team-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    overflow: hidden;
+}
+
+.team-card .team-img-wrap {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-card .team-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card .team-info {
+    padding: 1.2rem;
+    background: #0d0d0d;
+    border-top: 2px solid var(--color-neon-orange);
+}
+
+.social-links-tactical a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #181818;
+    color: #ffffff;
+    border: 1px solid var(--color-gray-border);
+    margin-right: 0.3rem;
+    transition: all 0.2s ease;
+}
+
+.social-links-tactical a:hover {
+    background: var(--color-neon-orange);
+    color: #000000;
+    border-color: var(--color-neon-orange);
+}
+
+/* Testimonial Section */
+.testimonial-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    padding: 2rem;
+    position: relative;
+}
+
+.testimonial-card::after {
+    content: '"';
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    color: rgba(255, 85, 0, 0.15);
+    line-height: 1;
+}
+
+/* Forms (Contact, Comment, Newsletter) */
+.form-control-tactical {
+    background: #0d0d0d;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 0;
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    font-family: var(--font-body);
+}
+
+.form-control-tactical:focus {
+    background: #141414;
+    border-color: var(--color-neon-orange);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.3);
+    outline: none;
+}
+
+.form-control-tactical::placeholder {
+    color: #777777;
+}
+
+/* Comment List */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-item {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-gray-border);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.comment-avatar {
+    width: 55px;
+    height: 55px;
+    border: 1px solid var(--color-neon-orange);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Footer */
+footer {
+    background: #040404;
+    border-top: 3px solid var(--color-neon-orange);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    padding-top: 4rem;
+}
+
+footer h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-neon-orange);
+}
+
+footer .footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+footer .footer-links a {
+    color: #aaaaaa;
+    transition: color 0.2s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--color-neon-orange);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    background: #000000;
+    padding: 1.2rem 0;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 3.5rem;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: var(--color-neon-orange);
+    color: #000000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #ffffff;
+    color: var(--color-neon-orange);
+    box-shadow: 0 0 15px var(--color-neon-glow);
+}
+
+/* Map Embed */
+.map-container {
+    border: 1px solid var(--color-neon-orange);
+    filter: grayscale(90%) invert(90%) contrast(120%);
+    height: 380px;
+    width: 100%;
+}
+
+/* Scroll Animation Utilities */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
